@@ -11,23 +11,23 @@ private Connection conexao;
 	
 	public boolean conectar() {
 		String driverName = "org.postgresql.Driver";                    
-		String serverName = "";
-		String mydatabase = "";
+		String serverName = "safeweb.postgres.database.azure.com";
+		String mydatabase = "safeweb";
 		int porta = 5432;
 		String url = "jdbc:postgresql://" + serverName + ":" + porta +"/" + mydatabase;
-		String username = "";
-		String password = "";
+		String username = "safewebadm@safeweb";
+		String password = "@Safeweb";
 		boolean status = false;
 
 		try {
 			Class.forName(driverName);
 			conexao = DriverManager.getConnection(url, username, password);
 			status = (conexao == null);
-			System.out.println("Conexão efetuada com o postgres!");
+			System.out.println("Conexï¿½o efetuada com o postgres!");
 		} catch (ClassNotFoundException e) { 
-			System.err.println("Conexão NÃO efetuada com o postgres -- Driver não encontrado -- " + e.getMessage());
+			System.err.println("Conexï¿½o Nï¿½O efetuada com o postgres -- Driver nï¿½o encontrado -- " + e.getMessage());
 		} catch (SQLException e) {
-			System.err.println("Conexão NÃO efetuada com o postgres -- " + e.getMessage());
+			System.err.println("Conexï¿½o Nï¿½O efetuada com o postgres -- " + e.getMessage());
 		}
 
 		return status;
@@ -65,7 +65,7 @@ private Connection conexao;
 		try {  
 			Statement st = conexao.createStatement();
 			String sql = "UPDATE lojas SET Porcentagem de problemas resolvidos = '" + loja.getPorcProblemasResolv() + "', Nota connsumidor = '"  
-				       + loja.getNotaConsumidor() + "', Numero de reclamações = '" +  loja.getNumReclamacoes() + "', Numero de reclamações respondidas  = '" + loja.getNumReclamacoesResp() + "'"
+				       + loja.getNotaConsumidor() + "', Numero de reclamaï¿½ï¿½es = '" +  loja.getNumReclamacoes() + "', Numero de reclamaï¿½ï¿½es respondidas  = '" + loja.getNumReclamacoesResp() + "'"
 					   + " WHERE nome = " + loja.getNome();
 			st.executeUpdate(sql);
 			st.close();

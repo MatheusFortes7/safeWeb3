@@ -11,13 +11,13 @@ public class UsuariosDAO {
 	}
 	
 	public boolean conectar() {
-		String driverName = "";                    
-		String serverName = "";
-		String mydatabase = "";
+		String driverName = "org.postgresql.Driver";                    
+		String serverName = "safeweb.postgres.database.azure.com";
+		String mydatabase = "safeweb";
 		int porta = 5432;
-		String url = "jdbc:postgresql://" + serverName + ":" + porta + "/" + mydatabase;
-		String username = "";
-		String password = "";
+		String url = "jdbc:postgresql://" + serverName + ":" + porta +"/" + mydatabase;
+		String username = "safewebadm@safeweb";
+		String password = "@Safeweb";
 		boolean status = false;
 
 		try {
