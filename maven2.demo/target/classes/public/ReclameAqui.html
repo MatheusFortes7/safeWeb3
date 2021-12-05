@@ -48,6 +48,23 @@
         font-size: 15px;
         text-align: left;
     }
+
+    .nav_links li {
+        padding: 5px 20px;
+        text-decoration: none;
+    }
+
+    .nav_links li a {
+        transition: all 0.3s ease 0s;
+        font-size: larger;
+        text-decoration: none;
+        color: #343a40;
+        display: inline-block;
+    }
+
+    .nav_links li a:hover {
+        color: #00b2df
+    }
 </style>
 
 <body>
@@ -106,6 +123,7 @@
                         <input type="submit" value="Lojas banco de dados" class="input--consult__style input--button">
                     </form>
                 </section>
+            </div>
                 <section class="section--row__responsive">
                     <form method="post" id="form-all">
                         <br><br><br>
@@ -118,7 +136,7 @@
                 </div>
                 
 
-            </div>
+           
             <br>
             <br>
             <br>
@@ -135,7 +153,8 @@
                 let texto = '';
 
                 texto = texto + `
-                <ul>
+                <br><br>
+                <ul class="nav_links">
                     <li><a href="americanas.html"> Lojas Americanas </a></li>
                     <li><a href="amazon.html"> Amazon</a></li>
                     <li><a href="casasbahia.html"> Casas Bahia</a></li>
